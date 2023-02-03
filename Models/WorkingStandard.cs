@@ -15,7 +15,7 @@ namespace WSOperation.Models
         public int Id { get; set; }
 
 
-        [Required, StringLength(20)]
+        [Required, StringLength(50)]
         public string Partnumber { get; set; } = null!;
 
         [Required, StringLength(255)]

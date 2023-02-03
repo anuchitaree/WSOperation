@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WSOperation.Modules;
 
 namespace WSOperation.Models
 {
@@ -16,5 +12,16 @@ namespace WSOperation.Models
         public DbSet<Account> Accounts { get; set; } = null!;
         public DbSet<WorkingStandard> WorkingStandards { get; set; } = null!;
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        { 
+            Param.ConnectionString= @"User ID =postgres;Server=localhost;Port=5432;Database=WSstorage;Username=postgres;Password=admin;Integrated Security=true;Pooling=true;";
+         
+            optionsBuilder.UseNpgsql(Param.ConnectionString);
+        }
+
+
     }
+
+
 }

@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using WSOperation.ChildFrm;
+using WSOperation.Modules;
 
 namespace WSOperation
 {
@@ -59,6 +60,8 @@ namespace WSOperation
 
             // get the configuration values in the section.
             var client_id = configSection["id"] ?? null;
+
+           Param.ConnectionString = configBuilder.GetSection("ConnectionStrings")["defaultConnection"]!;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

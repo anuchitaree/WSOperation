@@ -16,5 +16,7 @@ namespace WSOperation.Modules
 
 
         public static string Permition = "on";
+
+        public static string ConnectionString = "";
     }
 }
